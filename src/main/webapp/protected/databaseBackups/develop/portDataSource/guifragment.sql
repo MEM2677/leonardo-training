@@ -1991,3 +1991,25 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <form class="navbar-search pull-left" action="<#if (searchResultPageVar??) ><@wp.url page="${searchResultPageVar.code}" /></#if>" method="get">
 <input type="text" name="search" class="search-query span2" placeholder="<@wp.i18n key="ESSF_SEARCH" />" x-webkit-speech="x-webkit-speech" />
 </form>',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('simpleforecast','simpleforecast',NULL,'<a href="https://www.accuweather.com/en/it/rome/213490/weather-forecast/213490" class="aw-widget-legal">
+</a>
+<div id="awcc1514712565101" class="aw-widget-current"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="true" data-uid="awcc1514712565101"></div>
+<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>',NULL,0);
+
+
+
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('random_number_ognl', 'random-number-ognl', NULL, NULL, '<#assign s=JspTaglibs["/struts-tags"]>
+
+<h1>Hello OGNL World!</h1>
+(this widget is rendered by freemarker) </br>
+
+Random number:&nbsp;<@s.property value="number.output" />', 1);
+
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('random_number_ognl_error', 'random-number-ognl', NULL, NULL, '<pre>
+   __   _ __   _ __   ___   _ __
+ /''__`\/\`''__\/\`''__\/ __`\/\`''__\
+/\  __/\ \ \/ \ \ \//\ \L\ \ \ \/
+\ \____\\ \_\  \ \_\\ \____/\ \_\
+ \/____/ \/_/   \/_/ \/___/  \/_/
+
+</pre>', 1);

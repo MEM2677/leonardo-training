@@ -1,0 +1,8 @@
+<#assign s=JspTaglibs["/struts-tags"]>
+
+<h1>Hello OGNL World!</h1>
+(this widget is rendered by Freemarker) </br>
+
+Random number:&nbsp;<@s.property value="number.output" />
+</br>UI language code:&nbsp;<@s.property value="currentLang.code" />
+</br>current user:&nbsp;<@s.property value="uiUser.username" />

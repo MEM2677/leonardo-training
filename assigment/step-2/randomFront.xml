@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="leonardo_do/FrontEnd/leonardo/Random" namespace="/do/FrontEnd/leonardo/Random" extends="entando-front-default">
+
+		<global-results>
+			<result name="failure" type="guiFragment">
+				<param name="code">random_number_ognl_error</param>
+				<param name="jspLocation">/WEB-INF/leonardo/aps/jsp/internalservlet/random/frontend-random-error.jsp</param>
+			</result>
+    	</global-results>
+
+
+        <action name="view" class="leonardoRandomFrontEndAction" method="view">
+            <result type="guiFragment">
+				<param name="code">random_number_ognl</param>
+				<param name="jspLocation">/WEB-INF/leonardo/aps/jsp/internalservlet/random-number-ognl.jsp</param>
+			</result>
+			<interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+
+    </package>
+
+</struts>

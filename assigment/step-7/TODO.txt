@@ -1,0 +1,32 @@
+1) copy the class RandManagerBeanContainer, RandomManager and RandomWebsocketManager
+2) modify pom.xml
+
+<!-- websocket support // start -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-websocket</artifactId>
+			<version>8.1.16.v20140903</version>
+		</dependency>
+		
+		<!-- simple JSON library -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20131018</version><!-- feel free to choose a newer version -->
+		</dependency>
+
+3) modify web.xml
+
+<!-- WebSocket start JETTY // start -->
+	<servlet>
+		<servlet-name>WebSocket</servlet-name>
+		<servlet-class>au.leonardo.aps.system.servlet.random.RandomWebsocketManager</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WebSocket</servlet-name>
+		<url-pattern>/wstest/*</url-pattern>
+	</servlet-mapping>
+	<!-- WebSocket start JETTY // end -->
+	
+	5) connect to ws://localhost:8080/leonardo/wstest
+

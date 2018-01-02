@@ -4,3 +4,4 @@ INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('notfound','service',4
 INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('errorpage','service',5,'free');
 INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('homepage','homepage',-1,'free');
 INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('widgets','homepage',6,'free');
+INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('js','homepage',7,'free');

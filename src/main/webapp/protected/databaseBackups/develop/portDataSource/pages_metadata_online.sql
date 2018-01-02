@@ -33,3 +33,13 @@ INSERT INTO pages_metadata_online (code,titles,modelcode,showinmenu,extraconfig,
 </config>
 
 ','2017-12-31 18:16:12');
+INSERT INTO pages_metadata_online (code,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('js','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">js</property><property key="it">js</property></properties>
+','entando-page-bootstrap-hero',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>
+
+','2018-01-01 14:45:24');

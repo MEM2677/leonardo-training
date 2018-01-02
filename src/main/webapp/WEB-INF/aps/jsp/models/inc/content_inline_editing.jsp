@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="<wp:resourceURL />administration/css/jquery-ui-1.10.1.custom.css" media="screen"/>
 <link rel="stylesheet" href="<wp:resourceURL />administration/css/jqueryui-editable.css" media="screen"/>
 
+
+<%-- <wp:headInfo type="JS" info="angular.min.js" /> --%>
+<%-- <wp:headInfo type="JS" info="angular-widget.js" /> --%>
+
 <!-----------inclusione x-editable inline------------------------>
 <wp:ifauthorized permission="superuser">
     <script>

@@ -136,3 +136,19 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('simpleforecast','<?xml version="1.0" encoding="UTF-8"?>
 <properties><property key="en">Weather forecast</property><property key="it">Weather forecast</property></properties>
 ',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('random-number-react','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Random Number REACT Widget</property>
+<property key="it">Widget REACT per Numero casuale</property>
+</properties>',NULL,NULL,NULL,NULL,1,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('random-number-angular','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Random Number ANGULAR Widget</property>
+<property key="it">Widget ANGULAR per Numero casuale</property>
+</properties>',NULL,NULL,NULL,NULL,1,'free');
+
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('random-number-websocket', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Random Number WEBSOCKET Widget</property>
+<property key="it">Widget WEBSOCKET per Numero casuale</property>
+</properties>', NULL, NULL , NULL, NULL, 1, 'free');

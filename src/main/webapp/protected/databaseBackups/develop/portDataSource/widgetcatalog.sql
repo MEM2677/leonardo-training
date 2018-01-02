@@ -146,9 +146,36 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 <property key="en">Random Number ANGULAR Widget</property>
 <property key="it">Widget ANGULAR per Numero casuale</property>
 </properties>',NULL,NULL,NULL,NULL,1,'free');
-
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('random-number-websocket', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('random-number-websocket','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Random Number WEBSOCKET Widget</property>
 <property key="it">Widget WEBSOCKET per Numero casuale</property>
-</properties>', NULL, NULL , NULL, NULL, 1, 'free');
+</properties>',NULL,NULL,NULL,NULL,1,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('entando-widget-login_form_inspinia','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Dropdown Sign In</property>
+<property key="it">Dropdown Sign In</property>
+</properties>',NULL,NULL,NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('entando-widget-language_choose_inspinia','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Choose a Language</property>
+<property key="it">Choose a Language</property>
+</properties>',NULL,NULL,NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('entando-widget-search_result_inspinia','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Search Result</property>
+<property key="it">Search Result</property>
+</properties>',NULL,NULL,NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('entando-widget-navigation_bar_inspinia','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Navigation - Bar</property>
+<property key="it">Navigazione - Barra Orizzontale</property>
+</properties>','<config>
+	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
+	<action name="navigatorConfig" />
+</config>',NULL,NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('entando-widget-search_form_inspinia','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Search Form</property>
+<property key="it">Search Form</property>
+</properties>',NULL,NULL,NULL,NULL,1,NULL);

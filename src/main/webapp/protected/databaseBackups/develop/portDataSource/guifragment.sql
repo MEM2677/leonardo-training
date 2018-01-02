@@ -2016,3 +2016,237 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
  \/____/ \/_/   \/_/ \/___/  \/_/
 
 </pre>',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-login_form_inspinia','entando-widget-login_form_inspinia',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<li class=" dropdown
+    <#if (accountExpired?? && accountExpired == true) || (wrongAccountCredential?? && wrongAccountCredential == true)>open</#if> ">
+    <#if (Session.currentUser != "guest")>
+  
+    <a class="btn  text-left dropdown-toggle" href="#" data-toggle="dropdown">
+        ${Session.currentUser}
+        <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <@wp.ifauthorized permission="enterBackend">
+            <a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/main.action?request_locale=<@wp.info key="currentLang" />">
+               <i class="fa fa-cube"></i>      
+                <@wp.i18n key="ESLF_ADMINISTRATION" />
+            </a>
+            </@wp.ifauthorized>
+        </li>
+        <div class="divider"></div>
+        <li> 
+            <a class="btn" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/logout.action">
+               <i class="fa fa-sign-out"></i>           
+                <@wp.i18n key="ESLF_SIGNOUT" />
+            </a>
+        </li>
+        <@wp.pageWithWidget var="editProfilePageVar" widgetTypeCode="userprofile_editCurrentUser" />
+        <#if (editProfilePageVar??) >
+        <li>
+            <a href="<@wp.url page="${editProfilePageVar.code}" />" ><@wp.i18n key="ESLF_PROFILE_CONFIGURATION" /></a>
+        </li>
+        </#if>
+    </ul>
+    <#else>
+ 
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <@wp.i18n key="ESLF_SIGNIN" />
+        <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <form class="m-t" style="padding:10px;" method="POST">
+                <#if (accountExpired?? && accountExpired == true)>
+                <div class="alert alert-error">
+                    <button class="close" data-dismiss="alert">x</button>
+                    <@wp.i18n key="ESLF_USER_STATUS_EXPIRED" />
+                </div>
+                </#if>
+                <#if (wrongAccountCredential?? && wrongAccountCredential == true)>
+                <div class="alert alert-error">
+                    <button class="close" data-dismiss="alert">x</button>
+                    <@wp.i18n key="ESLF_USER_STATUS_CREDENTIALS_INVALID" />
+                </div>
+                </#if>
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" placeholder="<@wp.i18n key="ESLF_USERNAME" />">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control"  placeholder="<@wp.i18n key="ESLF_PASSWORD" />">
+                </div>
+                <input type="submit" class="btn btn-primary block full-width m-b" value="<@wp.i18n key="ESLF_SIGNIN" />" />
+            </form>
+        </li>
+    </ul>
+    </#if>
+</li>',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-language_choose_inspinia','entando-widget-language_choose_inspinia',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="langs" var="langsVar" />
+<@wp.info key="currentLang" var="currentLangVar" />
+<a data-toggle="dropdown" class="dropdown-toggle" href="#"  title="<@wp.i18n key="ESLC_LANGUAGE" />">     
+   <#if (accountExpired?? && accountExpired == true) || (wrongAccountCredential?? && wrongAccountCredential == true)>open</#if>
+   <#if (Session.currentUser != "guest")>
+   <span class="block m-t-xs"> 
+        <strong class="font-bold">
+            ${Session.currentUser}
+        </strong>
+    </span>
+    <#else>
+    <span class="block m-t-xs"> 
+        <strong class="font-bold">
+            <@wp.i18n key="ESLF_SIGNIN" />
+        </strong>
+    </span>
+    </#if>
+    <span class="text-muted text-xs block">
+        <@wp.i18n key="ESLC_LANGUAGE" />
+        <b class="caret"></b>
+    </span>
+</a>
+<ul class="dropdown-menu animated fadeInRight m-t-xs">
+    <@wp.freemarkerTemplateParameter var="langsListVar" valueName="langsVar" removeOnEndTag=true >
+    <#list langsListVar as curLangVar>
+    <li <#if (curLangVar.code == currentLangVar)>class="active" </#if>>
+        <a href="<@wp.url lang="${curLangVar.code}" paramRepeat=true />">
+        <@wp.i18n key="ESLC_LANG_${curLangVar.code}" />
+        </a>
+    </li>
+    </#list>
+    </@wp.freemarkerTemplateParameter>
+</ul>',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-search_result_inspinia','entando-widget-search_result_inspinia',NULL,NULL,'<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+<div class="ibox-content">
+<#if (RequestParameters.search?? && RequestParameters.search!='''')>
+<@jacms.searcher listName="contentListResult" />
+</#if>
+<#if (contentListResult??) && (contentListResult?has_content) && (contentListResult?size > 0)>
+<@wp.pager listName="contentListResult" objectName="groupContent" max=10 pagerIdFromFrame=true advanced=true offset=5>
+	<@wp.freemarkerTemplateParameter var="group" valueName="groupContent" removeOnEndTag=true >
+	<h2> <@wp.i18n key="SEARCHED_FOR" />: <span class="text-navy">&#34;<#if (RequestParameters.search??)>${RequestParameters.search}</#if>&#34;</span> </h2>
+	<small>${groupContent.size} <@wp.i18n key="SEARCH_RESULTS_OUTRO" /> [${groupContent.begin + 1} &ndash; ${groupContent.end + 1}]:</small>
+	<@wp.fragment code="default_pagerBlock" escapeXml=false />
+        <div class="hr-line-dashed"></div>
+	<#list contentListResult as contentId>
+	<#if (contentId_index >= groupContent.begin) && (contentId_index <= groupContent.end)>
+		<@jacms.content contentId="${contentId}" modelId="list" />
+	</#if>
+	</#list>
+	<@wp.fragment code="default_pagerBlock" escapeXml=false />
+	</@wp.freemarkerTemplateParameter>
+</@wp.pager>
+<#else>
+<h2><@wp.i18n key="SEARCH_RESULTS" /></h2>
+<p class="text-danger"><@wp.i18n key="SEARCH_NOTHING_FOUND" /></p>
+</#if>
+</div>',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-navigation_bar_inspinia','entando-widget-navigation_bar_inspinia',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.currentPage param="code" var="currentPageCode" />
+<@wp.freemarkerTemplateParameter var="currentPageCode" valueName="currentPageCode" />
+
+<@wp.nav var="page">
+
+<#if (previousPage?? && previousPage.code??)>
+	<#assign previousLevel=previousPage.level>
+	<#assign level=page.level>
+        <@wp.freemarkerTemplateParameter var="level" valueName="level" />
+	<@wp.freemarkerTemplateParameter var="previousLevel" valueName="previousLevel" />
+	<@wp.fragment code="entando-widget-navigation_bar_inspinia_include" escapeXml=false />
+</#if>
+
+	<@wp.freemarkerTemplateParameter var="previousPage" valueName="page" />
+</@wp.nav>
+
+<#if (previousPage??)>
+	<#assign previousLevel=previousPage.level>
+        <#assign level=0>
+	<@wp.freemarkerTemplateParameter var="level" valueName="level" />
+	<@wp.freemarkerTemplateParameter var="previousLevel" valueName="previousLevel" />
+	<@wp.fragment code="entando-widget-navigation_bar_inspinia_include" escapeXml=false />
+
+        <#if (previousLevel != 0)>
+        <#list 0..(previousLevel - 1) as ignoreMe>
+            </ul></li>
+        </#list>
+                
+	</#if>
+</#if>
+
+<@wp.freemarkerTemplateParameter var="previousPage" valueName="" removeOnEndTag=true />',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-navigation_bar_inspinia_include',NULL,NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+
+<#assign liClass="">
+<#assign homeIcon="">
+<#assign caret="">
+<#assign ulClass='' class="dropdown-menu"''>
+<#assign aClassAndData="">
+<#assign aURL=previousPage.url>
+
+<#if (previousPage.voidPage)>
+       <#assign aURL=''#'' />
+</#if>
+
+<#if (previousPage.code?contains("homepage"))>
+     <#assign homeIcon=''<i class="icon-home"></i>&#32;''>
+</#if>
+
+<#if (previousPage.code == currentPageCode)>
+     <#assign liClass='' class="active"''>
+</#if>
+
+<#if (previousLevel < level)>
+    <#assign liClass='' class="dropdown"'' >
+
+    <#if (previousPage.code == currentPageCode)>
+	<#assign liClass='' class="dropdown active"''>
+    </#if>
+
+    <#if previousPage.voidPage>
+	<#assign liClass='' class=" dropdown"'' >
+    </#if>
+
+    <#if (previousLevel > 0) >
+	<#assign liClass='' class="dropdown-submenu"''>
+	<#if (previousPage.code == currentPageCode)>
+		<#assign liClass='' class="dropdown-submenu active"''>
+    	</#if>
+
+	<#assign ulClass='' class="dropdown-menu"''>
+    </#if>
+
+    <#assign aClassAndData='' class="dropdown-toggle" data-toggle="dropdown"''>
+
+    <#if (previousLevel == 0)>
+	<#assign caret='' <span class="caret"></span>''>
+    </#if>
+</#if>
+
+<li ${liClass} > 
+	<a href="${aURL}"  ${aClassAndData} >
+				<!-- [ ${previousLevel} ] -->
+				${homeIcon}
+				${previousPage.title}
+				${caret}
+	</a>
+
+<#if (previousLevel == level)></li></#if>
+<#if (previousLevel < level)>
+    <ul ${ulClass}>
+</#if>
+<#if (previousLevel > level)>
+     <#list 1..(previousLevel - level) as ignoreMe>
+            </li></ul>
+     </#list>
+    </li>
+</#if>',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-search_form_inspinia','entando-widget-search_form_inspinia',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.pageWithWidget var="searchResultPageVar" widgetTypeCode="search_result" listResult=false />
+<form class="navbar-form-custom" action="<#if (searchResultPageVar??) ><@wp.url page="${searchResultPageVar.code}" /></#if>" method="get">
+<div class="form-group">
+<input type="text" name="search" class="form-control" placeholder="<@wp.i18n key="ESSF_SEARCH" />" />
+</div>
+</form>',1);

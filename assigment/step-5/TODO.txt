@@ -1,6 +1,5 @@
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('random-number-react', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Random Number REACT Widget</property>
-<property key="it">Widget REACT per Numero casuale</property>
-</properties>', NULL, NULL , NULL, NULL, 1, 'free');
-
+Go inside the "UX Patterns" -> "Widget" section of the admin console and create a new widget with the given parameters:
+code: react
+title: react
+group: free access
+Custom UI: copy and paste the code found in the react-widget.html file.

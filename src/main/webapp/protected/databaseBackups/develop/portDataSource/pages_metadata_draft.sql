@@ -18,11 +18,6 @@ INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,u
 <property key="en">Error page</property>
 <property key="it">Pagina di errore</property>
 </properties>','service',1,NULL,'2017-02-17 21:11:54');
-INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Home</property>
-<property key="it">Home</property>
-</properties>','home',1,NULL,'2017-02-18 00:12:24');
 INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('widgets','<?xml version="1.0" encoding="UTF-8"?>
 <properties><property key="en">widgets</property><property key="it">widgets</property></properties>
 ','entando-page-bootstrap-hero',1,'<?xml version="1.0" encoding="UTF-8"?>
@@ -43,3 +38,13 @@ INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,u
 </config>
 
 ','2018-01-02 05:42:57');
+INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">Home</property><property key="it">Home</property></properties>
+','home',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>
+
+','2018-01-08 15:19:11');

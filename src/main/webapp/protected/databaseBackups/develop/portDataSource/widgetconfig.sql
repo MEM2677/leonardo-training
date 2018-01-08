@@ -1,4 +1,3 @@
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',0,'content_viewer',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('js',5,'random-number-angular',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('widgets',0,'entando-widget-language_choose',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('widgets',1,'entando-widget-navigation_bar','<?xml version="1.0" encoding="UTF-8"?>

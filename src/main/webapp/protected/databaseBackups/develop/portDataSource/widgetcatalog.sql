@@ -179,3 +179,9 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 <property key="en">Search Form</property>
 <property key="it">Search Form</property>
 </properties>',NULL,NULL,NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('react','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">react</property><property key="it">react</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('angular','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">angular</property><property key="it">angular</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');

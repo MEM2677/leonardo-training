@@ -1,0 +1,10 @@
+    <!-- WebSocket start JETTY // start -->
+	<servlet>
+		<servlet-name>WebSocket</servlet-name>
+		<servlet-class>au.leonardo.aps.system.servlet.random.RandomWebsocketManager</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WebSocket</servlet-name>
+		<url-pattern>/wstest/*</url-pattern>
+	</servlet-mapping>
+	<!-- WebSocket start JETTY // end -->

@@ -2250,3 +2250,17 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <input type="text" name="search" class="form-control" placeholder="<@wp.i18n key="ESSF_SEARCH" />" />
 </div>
 </form>',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('react','react',NULL,'<div id="entando-react"></div>
+<script type="text/javascript" src="/leonardo/resources/static/js/react-widget.js"></script>
+',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('angular','angular',NULL,'<div ng-app="myApp" ng-controller="NumberController" class="jumbotron">
+  <h2>Angular Number Widget</h2>
+  <p>
+    you fecthed # <kbd>{{number}}</kbd>
+  </p>
+  <p>
+    <button class="btn btn-primary btn-large" ng-click="fetchNewNumber()">Get Another Number</button>
+  </p>
+</div>
+<script type="text/javascript" src="/leonardo/resources/static/js/angular.min.js"></script>
+<script type="text/javascript" src="/leonardo/resources/static/js/angular-widget.js"></script>',NULL,0);

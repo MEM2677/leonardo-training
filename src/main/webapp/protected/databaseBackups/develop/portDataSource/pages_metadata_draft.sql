@@ -27,7 +27,7 @@ INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,u
   <mimeType>text/html</mimeType>
 </config>
 
-','2018-01-02 19:20:32');
+','2018-01-10 20:43:43');
 INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('js','<?xml version="1.0" encoding="UTF-8"?>
 <properties><property key="en">js</property><property key="it">js</property></properties>
 ','entando-page-bootstrap-hero',1,'<?xml version="1.0" encoding="UTF-8"?>
@@ -37,7 +37,7 @@ INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,u
   <mimeType>text/html</mimeType>
 </config>
 
-','2018-01-02 05:42:57');
+','2018-01-10 14:28:32');
 INSERT INTO pages_metadata_draft (code,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage','<?xml version="1.0" encoding="UTF-8"?>
 <properties><property key="en">Home</property><property key="it">Home</property></properties>
 ','home',1,'<?xml version="1.0" encoding="UTF-8"?>

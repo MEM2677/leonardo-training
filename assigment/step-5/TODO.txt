@@ -3,3 +3,5 @@ code: react
 title: react
 group: free access
 Custom UI: copy and paste the code found in the react-widget.html file.
+
+copy the file react-widget.html into ./leonardo/src/main/webapp/resources/static/less

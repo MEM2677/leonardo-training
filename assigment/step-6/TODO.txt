@@ -1,5 +1,8 @@
+Copy angular-* in ./leonardo/src/main/webapp/resources/static/js
+
+
 Go inside the "UX Patterns" -> "Widget" section of the admin console and create a new widget with the given parameters:
 code: angular
 title: angular
 group: free access
-Custom UI: copy and paste the code found in the react-widget.html file.
+Custom UI: copy and paste the code found in the angular-widget.html file.

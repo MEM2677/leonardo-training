@@ -7,7 +7,7 @@
 			<artifactId>jetty-websocket</artifactId>
 			<version>8.1.16.v20140903</version>
 		</dependency>
-		
+
 		<!-- simple JSON library -->
 		<dependency>
 			<groupId>org.json</groupId>
@@ -17,7 +17,7 @@
 
 3) modify web.xml
 
-<!-- WebSocket start JETTY // start -->
+    <!-- WebSocket start JETTY // start -->
 	<servlet>
 		<servlet-name>WebSocket</servlet-name>
 		<servlet-class>au.leonardo.aps.system.servlet.random.RandomWebsocketManager</servlet-class>
@@ -27,6 +27,6 @@
 		<url-pattern>/wstest/*</url-pattern>
 	</servlet-mapping>
 	<!-- WebSocket start JETTY // end -->
-	
+
 	5) connect to ws://localhost:8080/leonardo/wstest
 

@@ -29,4 +29,6 @@
 	<!-- WebSocket start JETTY // end -->
 
 	5) connect to ws://localhost:8080/leonardo/wstest
+	
+	6) copy the widget-websoket.js into ./leonardo/src/main/webapp/resources/static/js/ws
 
